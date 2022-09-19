@@ -37,12 +37,12 @@ _To install package from Github npm registry, add below file in your repo before
 You can also install directly from current repo master
 ```bash
 # npm
-npm i vincecao/use-tools
-npm i github:vincecao/use-tools
+npm i vincecao/use-d3
+npm i github:vincecao/use-d3
 
 # yarn
-yarn add vincecao/use-tools
-yarn add github:vincecao/use-tools
+yarn add vincecao/use-d3
+yarn add github:vincecao/use-d3
 ```
 
 ## Live Demo

@@ -67,5 +67,6 @@
   },
   "peerDependencies": {
     "react": ">=16"
-  }
+  },
+  "keywords": ["d3", "d3js", "react", "hooks", "observablehq", "typescript"]
 }
