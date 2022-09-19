@@ -20,7 +20,7 @@ jobs:
         run: |
           cd example
           yarn install --frozen-lockfile
-          yarn build
+          yarn build --public-url /use-d3/
 
   pass-ci-chore-commits:
     if: ${{ contains(github.event.head_commit.message, 'chore(ci)') }}
