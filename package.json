@@ -14,7 +14,7 @@
       "limit": "10 KB"
     }
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "module": "dist/use-d3.esm.js",
   "main": "dist/index.js",
@@ -68,5 +68,12 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "keywords": ["d3", "d3js", "react", "hooks", "observablehq", "typescript"]
+  "keywords": [
+    "d3",
+    "d3js",
+    "react",
+    "hooks",
+    "observablehq",
+    "typescript"
+  ]
 }
