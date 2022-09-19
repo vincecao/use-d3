@@ -1,0 +1,92 @@
+name: Stable Publish
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  # When a new release is created, a stable version will be published.
+  publish-stable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # Allow push from action in PAT trigger an action
+          persist-credentials: false
+      
+      - name: Configure Git setting for CI
+        run: |
+          git config --global user.name "Lineng CAO"
+          git config --global user.email "lineng.ca@gmail.com"
+
+      - name: Publish stable package to NPMJS npm registry
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Test package
+        run: |
+          yarn install --frozen-lockfile
+          # yarn test
+      
+      - name: Assign a new stable version from release tag version
+        # no need git tag version change because it is created before this action starts
+        run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
+      
+      - name: Publish stable to NPMJS
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish stable package to GITHUB npm registry
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          scope: 'vincecao'
+      
+      - name: Publish stable to GITHUB
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add stable version change commit message 
+      # add commit manually due to no-git-tag-version setting in npm version
+        run: |
+          git commit -a -m "chore(ci): ${{ github.event.release.tag_name }}"
+
+      - name: Push stable version change to HEAD:master
+        uses: ad-m/github-push-action@master
+        with:
+          # for re-triggering github checks on master, need to use a personal PAT token instead of GITHUB_TOKEN
+          github_token: ${{ secrets.GH_PUSH_COMMIT_TOKEN }}
+  
+  # When a new PR is merged to master branch, a demo site will be build and deployed 
+  deploy-demo-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Build useTools after tests
+        run: |
+          yarn install --frozen-lockfile
+          # yarn test
+          yarn build
+      
+      - name: Build example
+        run: |
+          cd example
+          yarn install --frozen-lockfile
+          yarn build
+      
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: demo
+          build_dir: example/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

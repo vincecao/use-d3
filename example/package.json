@@ -1,0 +1,30 @@
+{
+  "name": "use-d3-example",
+  "version": "1.0.0",
+  "description": "A example demo for @vincecao/use-d3 library",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Lineng Cao",
+  "license": "MIT",
+  "dependencies": {
+    "@observablehq/how-to-embed-a-notebook-in-a-react-app": "https://api.observablehq.com/@observablehq/how-to-embed-a-notebook-in-a-react-app.tgz?v=3"
+  },
+  "alias": {
+    "react": "../node_modules/react",
+    "react-dom": "../node_modules/react-dom",
+    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling",
+    "d3": "../node_modules/d3",
+    "d3-selection": "../node_modules/d3-selection"
+  },
+  "devDependencies": {
+    "@types/react": "../node_modules/@types/react",
+    "@types/react-dom": "../node_modules/@types/react-dom",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "typescript": "../node_modules/typescript"
+  }
+}
