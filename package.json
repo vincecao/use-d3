@@ -14,7 +14,7 @@
       "limit": "10 KB"
     }
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "module": "dist/use-d3.esm.js",
   "main": "dist/index.js",
