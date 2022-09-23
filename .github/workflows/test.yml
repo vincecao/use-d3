@@ -19,7 +19,8 @@ jobs:
       - name: Build demo page test
         run: |
           cd example
-          yarn install --frozen-lockfile
+          # Generate new yarn lock to fix integrity check error in new ci dependencies install.
+          yarn
           yarn build --public-url /use-d3/
 
   pass-ci-chore-commits:

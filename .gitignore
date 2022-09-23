@@ -3,3 +3,7 @@
 node_modules
 .parcel-cache
 dist
+
+# @d3/* package lock will have integrity check error in new device.
+# Thus, ingore example's lock.
+example/yarn.lock
