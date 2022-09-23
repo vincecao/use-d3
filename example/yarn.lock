@@ -23,6 +23,26 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@d3/realtime-horizon-chart@https://api.observablehq.com/@d3/realtime-horizon-chart.tgz?v=3":
+  version "703.0.0"
+  resolved "https://api.observablehq.com/@d3/realtime-horizon-chart.tgz?v=3#65252b905614bdc6ee63603dc4dab636f9cb9060"
+
+"@d3/sankey@https://api.observablehq.com/@d3/sankey.tgz?v=3":
+  version "668.0.0"
+  resolved "https://api.observablehq.com/@d3/sankey.tgz?v=3#5219f8a7aa0c603877bbc92a5f667d2c0f0778e9"
+
+"@d3/stacked-area-chart@https://api.observablehq.com/@d3/stacked-area-chart.tgz?v=3":
+  version "533.0.0"
+  resolved "https://api.observablehq.com/@d3/stacked-area-chart.tgz?v=3#a595e0f5898b70d6a2e2f7964e854cf1d5fcd6f4"
+
+"@d3/streamgraph-transitions@https://api.observablehq.com/@d3/streamgraph-transitions.tgz?v=3":
+  version "144.0.0"
+  resolved "https://api.observablehq.com/@d3/streamgraph-transitions.tgz?v=3#0432511a0c4f9cf7f45d7c514da331314a8feb3f"
+
+"@gallowayevan/life-expectancy@https://api.observablehq.com/@gallowayevan/life-expectancy.tgz?v=3":
+  version "125.0.0"
+  resolved "https://api.observablehq.com/@gallowayevan/life-expectancy.tgz?v=3#72155bd73d07c7ba67fa815a8e142f463f6d7645"
+
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.2.tgz#c1aedc61e853f2bb9f5dfe6d4442d3b565b253b9"
@@ -104,6 +124,14 @@
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.2.tgz#28f643fbc0bec30b07fbe95b137879b6b4d1c9c5"
   integrity sha512-zrBczSbXKxEyK2ijtbRdICDygRqWSRPpZMN5dD1T8VMEW5RIhIbwFWw2phDRXuBQdVDpSjalCIUMWMV2h3JaZA==
+
+"@mbostock/inequality-in-american-cities@https://api.observablehq.com/@mbostock/inequality-in-american-cities.tgz?v=3":
+  version "733.0.0"
+  resolved "https://api.observablehq.com/@mbostock/inequality-in-american-cities.tgz?v=3#22d202f0c37476c86898e7caee62840effd5107c"
+
+"@mbostock/psr-b1919-21@https://api.observablehq.com/@mbostock/psr-b1919-21.tgz?v=3":
+  version "111.0.0"
+  resolved "https://api.observablehq.com/@mbostock/psr-b1919-21.tgz?v=3#cb3525cc3995ac606dbc29c852409a6ed05e4782"
 
 "@mischnic/json-sourcemap@^0.1.0":
   version "0.1.0"
@@ -741,7 +769,16 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@../node_modules/@types/react":
+"@types/react@*":
+  version "18.0.21"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.21.tgz#b8209e9626bb00a34c76f55482697edd2b43cc67"
+  integrity sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@../node_modules/@types/react":
   version "18.0.20"
   dependencies:
     "@types/prop-types" "*"

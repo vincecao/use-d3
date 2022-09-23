@@ -1,11 +1,12 @@
 import { Runtime, Inspector } from '@observablehq/runtime';
-import type { Ref } from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Ref } from 'react';
 
 type UseD3Notebook = {
   notebook: any;
   inspectorName: string;
+  additionalNames?: string[];
   onInitialModuleFulfilled?: (name: string, input: any) => void;
+  onAdditionalName?: (name: string) => void;
 };
 
 /**
@@ -23,6 +24,15 @@ export function moduleRedefine(
 }
 
 /**
+ * Add additional Inspector for client components
+ * @param ref additional div ref
+ * @return ref with inspector
+ */
+export function additionalInspector(ref: HTMLDivElement | undefined | null): void {
+  return new Inspector(ref);
+}
+
+/**
  * A hook for embedding notebook with Observablehq Runtime and Inspector.
  * @param { notebook, inspectorName, onInitialModuleFulfilled }
  * @returns { inspectorRef, module, fulfilledInputsMap }
@@ -30,7 +40,9 @@ export function moduleRedefine(
 export default function useD3Notebook({
   notebook,
   inspectorName,
+  additionalNames = [],
   onInitialModuleFulfilled,
+  onAdditionalName,
 }: UseD3Notebook): {
   inspectorRef: Ref<HTMLDivElement>,
   module: any,
@@ -42,9 +54,13 @@ export default function useD3Notebook({
 
   useEffect(() => {
     const runtime = new Runtime();
-    const main = runtime.module(notebook, (name: string) => {
+    moduleRef.current = runtime.module(notebook, (name: string) => {
       if (name === inspectorName) {
         return new Inspector(inspectorRef.current);
+      }
+
+      if (additionalNames.includes(name)) {
+        return onAdditionalName?.(name);
       }
 
       if (typeof name === 'string') {
@@ -56,7 +72,7 @@ export default function useD3Notebook({
         };
       }
     });
-    moduleRef.current = main;
+
     return () => {
       runtime.dispose();
       moduleRef.current = null;

@@ -11,6 +11,13 @@
   "author": "Lineng Cao",
   "license": "MIT",
   "dependencies": {
+    "@d3/realtime-horizon-chart": "https://api.observablehq.com/@d3/realtime-horizon-chart.tgz?v=3",
+    "@d3/sankey": "https://api.observablehq.com/@d3/sankey.tgz?v=3",
+    "@d3/stacked-area-chart": "https://api.observablehq.com/@d3/stacked-area-chart.tgz?v=3",
+    "@d3/streamgraph-transitions": "https://api.observablehq.com/@d3/streamgraph-transitions.tgz?v=3",
+    "@gallowayevan/life-expectancy": "https://api.observablehq.com/@gallowayevan/life-expectancy.tgz?v=3",
+    "@mbostock/inequality-in-american-cities": "https://api.observablehq.com/@mbostock/inequality-in-american-cities.tgz?v=3",
+    "@mbostock/psr-b1919-21": "https://api.observablehq.com/@mbostock/psr-b1919-21.tgz?v=3",
     "@observablehq/how-to-embed-a-notebook-in-a-react-app": "https://api.observablehq.com/@observablehq/how-to-embed-a-notebook-in-a-react-app.tgz?v=3"
   },
   "alias": {
