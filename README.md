@@ -46,7 +46,7 @@ yarn add github:vincecao/use-d3
 ```
 
 ## Live Demo
-- [**Demo Site**](https://vince-amazing.com/use-d3/)
+- [**Demo Site**](https://vincecao.github.io/use-d3/)
 - [Code Example](https://github.com/vincecao/use-d3/tree/master/example)
 
 ## Development
